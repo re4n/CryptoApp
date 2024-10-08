@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		309419182CA052BD00122187 /* WishlistNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309419172CA052B200122187 /* WishlistNotifications.swift */; };
 		30B984C52C769BE00083DBB2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B984C42C769BE00083DBB2 /* AppDelegate.swift */; };
 		30B984C72C769BE00083DBB2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B984C62C769BE00083DBB2 /* SceneDelegate.swift */; };
 		30B984C92C769BE00083DBB2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B984C82C769BE00083DBB2 /* ViewController.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		309419172CA052B200122187 /* WishlistNotifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistNotifications.swift; sourceTree = "<group>"; };
 		30B984C12C769BE00083DBB2 /* Crypto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Crypto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30B984C42C769BE00083DBB2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		30B984C62C769BE00083DBB2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -58,6 +60,7 @@
 		30B984C32C769BE00083DBB2 /* Crypto */ = {
 			isa = PBXGroup;
 			children = (
+				309419172CA052B200122187 /* WishlistNotifications.swift */,
 				30B984D82C769CD00083DBB2 /* Color+Extensions.swift */,
 				30B984C42C769BE00083DBB2 /* AppDelegate.swift */,
 				30B984DC2C76B5C80083DBB2 /* CryptoService.swift */,
@@ -141,6 +144,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				30B984C92C769BE00083DBB2 /* ViewController.swift in Sources */,
+				309419182CA052BD00122187 /* WishlistNotifications.swift in Sources */,
 				30B984C52C769BE00083DBB2 /* AppDelegate.swift in Sources */,
 				30B984C72C769BE00083DBB2 /* SceneDelegate.swift in Sources */,
 				30B984DD2C76B5C80083DBB2 /* CryptoService.swift in Sources */,

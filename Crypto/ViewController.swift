@@ -7,7 +7,10 @@
 
 import UIKit
 
+
 class ViewController: UIViewController {
+    private let wishlistNotifications = WishlistNotifications()
+    
     private lazy var backgroundView: UIImageView = {
         let imageView = UIImageView()
         imageView.backgroundColor = UIColor.bgDarkModeAsset
@@ -61,6 +64,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+        wishlistNotifications.checkForPermission()
     }
     
     private func setupView(){
