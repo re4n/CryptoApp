@@ -1,0 +1,1 @@
+Cryptocurrency Application for Educational Purposes
