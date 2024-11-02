@@ -36,11 +36,35 @@ class ViewController: UIViewController {
     private func setupView(){
         setHierarchy()
         setConstraints()
+//        setupCryptoServices()
     }
     
     private func setHierarchy(){
         view.addSubview(backgroundView)
         view.addSubview(cryptoIcon)
+    }
+    
+    private func setupCryptoServices() {
+        let service = CryptoServices()
+        service.fetchCryptos { [weak self] cryptos in
+            guard let self = self else { return }
+            
+            DispatchQueue.main.async {
+                if let cryptos = cryptos {
+                    for crypto in cryptos {
+                        let formattedChangePercent = self.formatPercentage(crypto.priceChangePercentage24h)
+                        print("Nome: \(crypto.name), Símbolo: \(crypto.symbol), Preço: \(crypto.currentPrice), Variação 24h: \(formattedChangePercent)%")
+                    }
+                } else {
+                    print("Nenhuma criptomoeda encontrada.")
+                }
+            }
+        }
+    }
+
+    private func formatPercentage(_ percentage: Double?) -> String {
+        guard let percentage = percentage else { return "N/A" }
+        return String(format: "%.2f", percentage)
     }
     
     private func setConstraints(){

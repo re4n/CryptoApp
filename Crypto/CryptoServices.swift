@@ -9,7 +9,7 @@ import Foundation
 
 class CryptoServices {
     
-    private let baseURL: String = "https://api.coincap.io/v2/assets"
+    private let baseURL: String = "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=10&page=1&sparkline=false"
     private let session = URLSession.shared
     
     func fetchCryptos(_ completion: @escaping ([Crypto]?) -> Void) {
@@ -33,8 +33,8 @@ class CryptoServices {
             }
             
             do {
-                let cryptoResponse = try JSONDecoder().decode(CryptoResponse.self, from: data)
-                completion(cryptoResponse.data)
+                let cryptoResponse = try JSONDecoder().decode([Crypto].self, from: data)
+                completion(cryptoResponse)
             } catch {
                 print("Erro ao decodificar JSON: \(error)")
                 completion(nil)
@@ -45,24 +45,18 @@ class CryptoServices {
     }
 }
 
-// MARK: - CryptoResponse
-struct CryptoResponse: Codable {
-    let data: [Crypto]
-}
-
 // MARK: - Crypto
 struct Crypto: Codable {
     let id: String
     let symbol: String
     let name: String
-    let priceUsd: String
-    let changePercent24Hr: String
+    let image: String
+    let currentPrice: Double
+    let priceChangePercentage24h: Double?
 
     enum CodingKeys: String, CodingKey {
-        case id, symbol, name
-        case priceUsd = "priceUsd"
-        case changePercent24Hr = "changePercent24Hr"
+        case id, symbol, name, image
+        case priceChangePercentage24h = "price_change_percentage_24h"
+        case currentPrice = "current_price"
     }
 }
-
-
